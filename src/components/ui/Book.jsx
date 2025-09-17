@@ -9,6 +9,8 @@ const Book = ({ book }) => {
 
   const mountedRef = useRef(true);
 
+  
+
   useEffect(() => {
     const image = new Image();
     image.src = book.url;
@@ -20,6 +22,7 @@ const Book = ({ book }) => {
       }, 300);
     };
     return () => {
+      // when component mounts
       mountedRef.current = false;
     };
   });
