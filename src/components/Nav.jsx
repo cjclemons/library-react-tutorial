@@ -1,9 +1,9 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LibraryLogo from "../assets/Library.svg";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ numberOfItems }) => {
   function openMenu() {
     document.body.classList += "menu--open";
   }
@@ -36,11 +36,13 @@ const Nav = () => {
             <Link to="/cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
-            <label className="cart__length">2</label>
+            {numberOfItems>0 && (
+              <label className="cart__length">{numberOfItems}</label>
+            )}
           </li>
         </ul>
         <div className="menu__backdrop">
-          <button className="btn__menu btn__menu--close" onClick={closeMenu} >
+          <button className="btn__menu btn__menu--close" onClick={closeMenu}>
             <FontAwesomeIcon icon="times" />
           </button>
           <ul className="menu__links">
