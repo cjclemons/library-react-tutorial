@@ -30,20 +30,17 @@ function App() {
   }
 
   function removeItem(item) {
-    setCart(cart.filter(book =>book.id !== item.id))
-
+    setCart(cart.filter((book) => book.id !== item.id));
   }
 
   function numberOfItems() {
-    let counter=0
-    cart.forEach(item => {
-      counter += item.quantity
-
-    })
+    let counter = 0;
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
     return counter;
   }
 
-  
   useEffect(() => {
     console.log(cart);
   }, [cart]);
@@ -68,7 +65,12 @@ function App() {
           <Route
             path="/cart"
             Component={() => (
-              <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem} />
+              <Cart
+                books={books}
+                cart={cart}
+                changeQuantity={changeQuantity}
+                removeItem={removeItem}
+              />
             )}
           />
         </Routes>

@@ -22,7 +22,7 @@ const Book = ({ book }) => {
       }, 300);
     };
     return () => {
-      // when component mounts
+      // when component unmounts
       mountedRef.current = false;
     };
   });
